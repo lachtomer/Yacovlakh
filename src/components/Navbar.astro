@@ -1,0 +1,104 @@
+---
+import { authorData } from '../data/authorData';
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'דף הבית ואודות' },
+  { href: '/books', label: 'ספרי תרגום' },
+  { href: '/poems', label: 'טעימות שירה' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-[#faf8f5]/90 backdrop-blur-md border-b border-paper-300/60 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand / Logo -->
+      <a href="/" class="group flex flex-col items-start focus:outline-none">
+        <span class="text-2xl sm:text-3xl font-serif font-bold text-ink-950 tracking-wide group-hover:text-burgundy-700 transition-colors duration-200">
+          {authorData.name}
+        </span>
+        <span class="text-xs sm:text-sm font-sans tracking-widest text-ink-600 uppercase">
+          {authorData.title}
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-1 sm:space-x-8 space-x-reverse">
+        {navLinks.map((link) => {
+          const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class={`text-base font-medium px-3 py-2 rounded-md transition-colors duration-200 relative ${
+                isActive
+                  ? 'text-burgundy-700 font-bold'
+                  : 'text-ink-700 hover:text-burgundy-700'
+              }`}
+            >
+              {link.label}
+              {isActive && (
+                <span class="absolute bottom-0 right-3 left-3 h-0.5 bg-burgundy-700 rounded-full" />
+              )}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex md:hidden">
+        <button
+          type="button"
+          id="mobile-menu-button"
+          class="p-2 rounded-md text-ink-800 hover:text-burgundy-700 hover:bg-paper-200 focus:outline-none focus:ring-2 focus:ring-burgundy-700"
+          aria-label="פתח תפריט ניווט"
+          aria-expanded="false"
+        >
+          <svg class="h-6 w-6 block" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg class="h-6 w-6 hidden" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-b border-paper-300 bg-[#faf8f5] px-4 pt-2 pb-4 space-y-1 shadow-lg">
+    {navLinks.map((link) => {
+      const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+      return (
+        <a
+          href={link.href}
+          class={`block px-3 py-2.5 rounded-md text-base font-medium transition-colors ${
+            isActive
+              ? 'bg-paper-200 text-burgundy-700 font-bold'
+              : 'text-ink-800 hover:bg-paper-100 hover:text-burgundy-700'
+          }`}
+        >
+          {link.label}
+        </a>
+      );
+    })}
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+
+  if (menuBtn && mobileMenu && openIcon && closeIcon) {
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+      mobileMenu.classList.toggle('hidden');
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  }
+</script>

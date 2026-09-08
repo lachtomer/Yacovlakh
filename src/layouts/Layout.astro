@@ -1,0 +1,65 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { authorData } from '../data/authorData';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = `${authorData.name} | ${authorData.title}`,
+  description = authorData.subtitle
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts for Literary Hebrew Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" 
+      rel="stylesheet" 
+    />
+
+    <style is:global>
+      :root {
+        --font-serif: 'Frank Ruhl Libre', serif;
+        --font-sans: 'Assistant', sans-serif;
+      }
+      body {
+        font-family: var(--font-sans);
+        background-color: #faf8f5;
+        color: #27272a;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, .font-literary {
+        font-family: var(--font-serif);
+      }
+      ::selection {
+        background-color: #7c1626;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col bg-[#faf8f5] text-ink-900 selection:bg-burgundy-700 selection:text-white">
+    <Navbar />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
