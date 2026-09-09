@@ -44,6 +44,7 @@ const navLinks = [
             </a>
           );
         })}
+
       </nav>
 
       <!-- Mobile Hamburger Button -->
@@ -73,16 +74,17 @@ const navLinks = [
       return (
         <a
           href={link.href}
-          class={`block px-3 py-2.5 rounded-md text-base font-medium transition-colors ${
+          class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
             isActive
               ? 'bg-paper-200 text-burgundy-700 font-bold'
-              : 'text-ink-800 hover:bg-paper-100 hover:text-burgundy-700'
+              : 'text-ink-700 hover:bg-paper-100 hover:text-burgundy-700'
           }`}
         >
           {link.label}
         </a>
       );
     })}
+
   </div>
 </header>
 

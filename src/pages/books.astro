@@ -14,43 +14,52 @@ const { books } = authorData;
       
       <!-- Page Header -->
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span class="text-xs font-semibold text-burgundy-700 tracking-widest uppercase">קטלוג פרסומים</span>
-        <h1 class="font-serif text-4xl sm:text-5xl font-black text-ink-950">
+        <span class="text-xs font-semibold text-burgundy-700 tracking-widest uppercase" data-editable="books-page-tag">קטלוג פרסומים</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-black text-ink-950" data-editable="books-page-title">
           ספרי תרגום ויצירות מופת
         </h1>
         <div class="w-20 h-1 bg-burgundy-700 mx-auto"></div>
-        <p class="text-lg text-ink-600 font-serif leading-relaxed">
+        <p class="text-lg text-ink-600 font-serif leading-relaxed" data-editable="books-page-desc">
           ספרי שירה ותרגומים שיצאו לאור בהוצאות הספרים המובילות בישראל, לצד תרגומים בכתבי עת ובעיתונות הספרותית.
         </p>
       </div>
 
       <!-- Books Grid Detailed -->
-      <div class="space-y-12 mb-20">
+      <div id="detailed-books-list" class="space-y-12 mb-20">
         {books.map((book, index) => (
-          <article class="bg-white rounded-2xl border border-paper-300 p-6 sm:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
+          <article class="bg-white rounded-2xl border border-paper-300 p-6 sm:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow relative" data-book-card-id={book.id}>
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               
               <!-- Book Cover / Aesthetic Tile -->
               <div class="lg:col-span-4 flex justify-center">
-                <div class="w-full max-w-[260px] aspect-[2/3] bg-gradient-to-br from-[#241715] via-[#35211c] to-[#1a0f0d] rounded-xl p-6 text-paper-100 flex flex-col justify-between shadow-xl relative border-2 border-gold-600/30">
-                  <div class="absolute inset-2 border border-gold-500/20 rounded-lg pointer-events-none"></div>
-                  
-                  <div>
-                    <span class="text-[11px] font-sans text-paper-300 tracking-widest block mb-2">
-                      תרגום: {authorData.name}
-                    </span>
-                    <h2 class="font-serif text-2xl font-bold text-white leading-tight">
-                      {book.title}
-                    </h2>
-                    <p class="font-serif text-sm text-gold-500 mt-2">
-                      {book.originalAuthor}
-                    </p>
-                  </div>
+                <div
+                  class="w-full max-w-[260px] aspect-[2/3] bg-gradient-to-br from-[#241715] via-[#35211c] to-[#1a0f0d] rounded-xl text-paper-100 flex flex-col justify-between shadow-xl relative border-2 border-gold-600/30 overflow-hidden"
+                  data-replaceable-image={`book-${book.id}`}
+                >
+                  {book.coverImage ? (
+                    <img src={book.coverImage} alt={book.title} class="w-full h-full object-cover" />
+                  ) : (
+                    <div class="p-6 flex flex-col justify-between h-full">
+                      <div class="absolute inset-2 border border-gold-500/20 rounded-lg pointer-events-none"></div>
+                      
+                      <div class="relative z-10">
+                        <span class="text-[11px] font-sans text-paper-300 tracking-widest block mb-2">
+                          תרגום: {authorData.name}
+                        </span>
+                        <h2 class="font-serif text-2xl font-bold text-white leading-tight">
+                          {book.title}
+                        </h2>
+                        <p class="font-serif text-sm text-gold-500 mt-2">
+                          {book.originalAuthor}
+                        </p>
+                      </div>
 
-                  <div class="border-t border-white/20 pt-3 text-xs text-paper-300 flex justify-between items-end font-sans">
-                    <span>{book.publisher}</span>
-                    <span class="font-mono text-paper-200">{book.year}</span>
-                  </div>
+                      <div class="relative z-10 border-t border-white/20 pt-3 text-xs text-paper-300 flex justify-between items-end font-sans">
+                        <span>{book.publisher}</span>
+                        <span class="font-mono text-paper-200">{book.year}</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -68,20 +77,20 @@ const { books } = authorData;
                   </span>
                 </div>
 
-                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-ink-950">
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-ink-950" data-editable={`book-title-${book.id}`}>
                   {book.title}
                 </h3>
                 
-                <h4 class="font-serif text-lg text-burgundy-800 font-semibold">
+                <h4 class="font-serif text-lg text-burgundy-800 font-semibold" data-editable={`book-author-${book.id}`}>
                   מאת: {book.originalAuthor}
                 </h4>
 
-                <p class="text-ink-700 text-base leading-relaxed">
+                <p class="text-ink-700 text-base leading-relaxed" data-editable={`book-desc-${book.id}`}>
                   {book.description}
                 </p>
 
                 {book.quote && (
-                  <div class="bg-paper-50 border-r-4 border-burgundy-700 p-4 rounded-l-lg font-serif text-base text-ink-900 italic">
+                  <div class="bg-paper-50 border-r-4 border-burgundy-700 p-4 rounded-l-lg font-serif text-base text-ink-900 italic" data-editable={`book-quote-${book.id}`}>
                     "{book.quote}"
                   </div>
                 )}
