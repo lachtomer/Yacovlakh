@@ -25,6 +25,38 @@ const {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="author" content="יעקב לח" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="יעקב לח, מתרגם שירה, תרגום שירה, יוסיף ברודסקי, אוסיפ מנדלשטם, ילנה שוורץ, שיר השירים, אמילי דיקינסון, וויסטן יו אודן" />
+    <link rel="canonical" href="https://yacovlakh.vercel.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yacovlakh.vercel.app/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:site_name" content="יעקב לח | מתרגם שירה" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://yacovlakh.vercel.app/" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Schema.org Person & Site Structured Data for Google -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "יעקב לח",
+        "alternateName": ["Yakov Lach", "Yacov Lakh", "Jacob Lach"],
+        "jobTitle": "מתרגם שירה",
+        "url": "https://yacovlakh.vercel.app/",
+        "description": "תרגומי מופת מרוסית, אוקראינית ואנגלית לעברית, ותרגומי שירה עברית לרוסית",
+        "email": "mailto:lakhy011@gmail.com"
+      }
+    </script>
 
     <!-- Google Fonts for Literary Hebrew Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
