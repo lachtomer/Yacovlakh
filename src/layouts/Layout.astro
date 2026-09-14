@@ -1,5 +1,4 @@
 ---
-import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import AdminOverlay from '../components/admin/AdminOverlay.astro';
 import { authorData } from '../data/authorData';
@@ -57,7 +56,6 @@ const {
     </style>
   </head>
   <body class="min-h-screen flex flex-col bg-[#faf8f5] text-ink-900 selection:bg-burgundy-700 selection:text-white">
-    <Navbar />
     <main class="flex-grow">
       <slot />
     </main>

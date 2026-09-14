@@ -39,55 +39,11 @@
 </head>
 <body class="min-h-screen flex flex-col bg-[#faf8f5] text-ink-900 selection:bg-burgundy-700 selection:text-white">
 
-  <!-- Header / Navigation -->
-  <header class="sticky top-0 z-50 bg-[#faf8f5]/90 backdrop-blur-md border-b border-paper-300/60 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <!-- Brand / Logo -->
-        <a href="#home" class="group flex flex-col items-start focus:outline-none">
-          <span class="text-2xl sm:text-3xl font-serif font-bold text-ink-950 tracking-wide group-hover:text-burgundy-700 transition-colors duration-200">
-            יעקב לח
-          </span>
-          <span class="text-xs sm:text-sm font-sans tracking-widest text-ink-600 uppercase">
-            מתרגם שירה
-          </span>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-1 sm:space-x-8 space-x-reverse" id="desktop-nav">
-          <a href="#home" data-tab="home" class="nav-link text-base font-medium px-3 py-2 rounded-md transition-colors duration-200 relative text-burgundy-700 font-bold">
-            דף הבית ואודות
-            <span class="active-indicator absolute bottom-0 right-3 left-3 h-0.5 bg-burgundy-700 rounded-full"></span>
-          </a>
-        </nav>
-
-        <!-- Mobile Hamburger Button -->
-        <div class="flex md:hidden">
-          <button type="button" id="mobile-menu-button" class="p-2 rounded-md text-ink-800 hover:text-burgundy-700 hover:bg-paper-200 focus:outline-none focus:ring-2 focus:ring-burgundy-700" aria-label="פתח תפריט ניווט" aria-expanded="false">
-            <svg class="h-6 w-6 block" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
-            <svg class="h-6 w-6 hidden" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-paper-300 bg-[#faf8f5] px-4 pt-2 pb-4 space-y-1 shadow-lg">
-      <a href="#home" data-tab="home" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-medium transition-colors bg-paper-200 text-burgundy-700 font-bold">
-        דף הבית ואודות
-      </a>
-    </div>
-  </header>
-
   <!-- Main Content Areas -->
   <main class="flex-grow">
     <!-- View: Home -->
     <div id="view-home" class="view-section">
-         <section class="relative bg-gradient-to-b from-paper-100 via-paper-50 to-[#faf8f5] pt-14 pb-16 md:pt-20 md:pb-24 border-b border-paper-200"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="space-y-6 text-right"> <div> <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-ink-950 tracking-tight leading-tight"> יעקב לח, <span class="font-normal text-burgundy-800 text-3xl sm:text-4xl font-serif">מתרגם</span> </h1> </div> <div class="space-y-4 text-base sm:text-lg text-ink-800 leading-relaxed pt-2"> <p class="font-medium text-ink-900">
+         <section class="relative bg-gradient-to-b from-paper-100 via-paper-50 to-[#faf8f5] pt-14 pb-16 md:pt-20 md:pb-24 border-b border-paper-200"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="space-y-6 text-right"> <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-2 border-b border-paper-200"> <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-ink-950 tracking-tight leading-tight"> יעקב לח, <span class="font-normal text-burgundy-800 text-3xl sm:text-4xl font-serif">מתרגם</span> </h1> <div class="inline-flex items-center gap-2 text-ink-700 bg-paper-200/70 px-3.5 py-1.5 rounded-lg border border-paper-300 self-start sm:self-auto"> <svg class="w-4 h-4 text-burgundy-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg> <span class="text-xs sm:text-sm font-sans font-medium text-ink-700">ליצירת קשר:</span> <a href="mailto:lakhy011@gmail.com" class="text-xs sm:text-sm font-mono text-burgundy-800 hover:text-burgundy-950 underline underline-offset-4 decoration-burgundy-300 hover:decoration-burgundy-700 transition" dir="ltr">lakhy011@gmail.com</a> </div> </div> <div class="space-y-4 text-base sm:text-lg text-ink-800 leading-relaxed pt-2"> <p class="font-medium text-ink-900">
 יליד 1937, קייב, אוקראינה.
 </p> <p>
 עלה ארצה בשנת 1974, עבד במכון לחקר הנגב בבאר שבע ובמפעלי ים המלח בסדום עד לשנת 1999. לאחר מכן למד במשך סמסטרים רבים שירה עברית באוניברסיטה בן גוריון כשומע חופשי אצל המרצים עמוס עוז, אורי ברנשטיין, ענת ויסמן ועוד.
@@ -99,8 +55,9 @@
   <section class="py-16 bg-[#faf8f5]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-xl mx-auto mb-12 space-y-3">
-        <h2 class="font-serif text-3xl font-bold text-ink-950">
-          ספרי תרגום
+        <h2 class="font-serif text-3xl font-bold text-ink-950 leading-snug">
+          הטעימה מהשירה<br />
+          <span class="text-2xl font-normal text-burgundy-800">בתרגומי מאנגלית</span>
         </h2>
         <div class="w-12 h-0.5 bg-burgundy-700 mx-auto"></div>
       </div>
@@ -131,45 +88,62 @@
 
   <!-- Primary Poetry Section -->
   <section class="py-16 bg-[#faf8f5] border-t border-paper-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-xl mx-auto mb-10 space-y-3">
         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-ink-950">
           טעימת שירה
         </h2>
         <div class="w-12 h-0.5 bg-burgundy-700 mx-auto"></div>
       </div>
-      <article class="bg-white rounded-2xl border border-paper-300 p-8 sm:p-12 shadow-sm relative overflow-hidden">
-        <div class="border-b border-paper-200 pb-5 mb-8 text-right">
-          <h3 class="font-serif text-3xl sm:text-4xl font-bold text-ink-950 leading-tight"> 288 (אֲנִי אֵינִי!) </h3>
-          <p class="text-base sm:text-lg font-serif text-ink-700 mt-2"> מאת: <strong class="text-ink-950 font-semibold">אמילי דיקינסון</strong> • <span class="text-burgundy-800 font-medium">מאנגלית: יעקב לח</span> </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-          <div class="md:col-span-7 space-y-1 text-right">
-            <div class="font-serif text-xl sm:text-2xl text-ink-950 leading-relaxed sm:leading-loose space-y-1">
-              <p class="font-medium">אֲנִי אֵינִי! – סְלִיחָה –</p>
-              <p class="font-medium">הֲגַם אַתָּה – אֵינְךָ?</p>
-              <p class="font-medium">וְאָנוּ כְּצֶמֶד בַּסּוֹף?</p>
-              <p class="font-medium">אַף מִלָּה! הֵם עֲלוּלִים לַחְשֹׂף – אַתָּה יוֹדֵעַ!</p>
+      <article class="bg-white rounded-2xl border border-paper-300 p-8 sm:p-12 shadow-sm relative overflow-hidden" style="font-family: Arial, 'Assistant', sans-serif;">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+          
+          <!-- SS#2 (On the Right): W. H. Auden -->
+          <div class="text-right space-y-4">
+            <div class="border-b border-paper-200 pb-3">
+              <h3 class="text-2xl sm:text-3xl font-bold text-ink-950" style="font-family: Arial, 'Assistant', sans-serif;">
+                וויסטן יו. אודן
+              </h3>
+              <p class="text-xl sm:text-2xl text-ink-900 italic mt-1 font-normal" style="font-family: Arial, 'Assistant', sans-serif;">
+                אפיטף לרודן
+              </p>
+            </div>
+            <div class="text-base sm:text-lg text-ink-950 leading-relaxed sm:leading-loose space-y-1 font-normal pt-1">
+              <p>שְׁלֵמוּת, סוּג שֶׁל, בָּזֶה הוּא שָׁאַף לִדְבֹּק,</p>
+              <p>וְהַפּוֹאֶטִיקָה שֶׁהִמְצִיא הָיְתָה בְּרוּרָה לְכֻלָּם;</p>
+              <p>כְּמוֹ כַף יָדוֹ הוּא הִכִּיר אִוֶּלֶת הָאָדָם</p>
+              <p>וְהִתְעַנְיֵן עַד מְאוֹד בְּצִיִּים וּבִצְבָאוֹת;</p>
+              <p>כְּשֶׁצָּחַק, סֶנָטוֹרִים מְכֻבָּדִים הִתְפָּרְצוּ בִּצְחוֹק</p>
+              <p>וּכְשֶׁבָּכָה, הַיְלָדִים הַקְּטַנִּים מֵתוּ בָּרְחוֹבוֹת.</p>
+            </div>
+            <div class="pt-3 text-left italic text-base sm:text-lg text-ink-800">
+              ינואר 1939
+            </div>
+          </div>
+
+          <!-- SS#3 (On the Left): Emily Dickinson -->
+          <div class="text-right space-y-4 border-t md:border-t-0 md:border-r border-paper-200 pt-8 md:pt-0 md:pr-8 lg:pr-12">
+            <div class="border-b border-paper-200 pb-3">
+              <h3 class="text-2xl sm:text-3xl font-bold text-ink-950" style="font-family: Arial, 'Assistant', sans-serif;">
+                אמילי דיקינסון
+              </h3>
+              <p class="text-xl sm:text-2xl text-ink-900 mt-1 font-normal" style="font-family: Arial, 'Assistant', sans-serif;">
+                288
+              </p>
+            </div>
+            <div class="text-base sm:text-lg text-ink-950 leading-relaxed sm:leading-loose space-y-1 font-normal pt-1">
+              <p>אֲנִי אֵינִי! – סְלִיחָה–</p>
+              <p>הֲגַם אַתָּה – אֵינְךָ?</p>
+              <p>וְאָנוּ כְּצֶמֶד בַּסּוֹף?</p>
+              <p>אַף מִלָּה! הֵם עֲלוּלִים לַחְשֹׂף – אַתָּה יוֹדֵעַ!</p>
               <div class="h-4"></div>
-              <p class="font-medium">לִהְיוֹת מִישֶׁהוּ – מְשַׁעֲמֵם!</p>
-              <p class="font-medium">כַּמָּה נָדוֹשׁ – כְּמוֹ צְפַרְדֵּעַ –</p>
-              <p class="font-medium">לְקַרְקֵר אֶת שֵּׁםְךָ חֹדֶשׁ יוּנִי שָׁלֵם – </p>
-              <p class="font-medium">לְבִצָּה הַמַּעֲרִיצָה!</p>
+              <p>לִהְיוֹת מִישֶׁהוּ – מְשַׁעֲמֵם!</p>
+              <p>כַּמָּה נָדוֹשׁ – כְּמוֹ צְפַרְדֵּעַ –</p>
+              <p>לְקַרְקֵר אֶת שִׁמְךָ חֹדֶשׁ יוּנִי שָׁלֵם</p>
+              <p>לַבִּצָּה הַמַּעֲרִיצָה!</p>
             </div>
           </div>
-          <div class="md:col-span-5 space-y-1 text-left border-t md:border-t-0 md:border-r border-paper-200 pt-6 md:pt-0 md:pr-8" dir="ltr">
-            <div class="font-serif text-sm sm:text-base text-ink-600 leading-relaxed italic space-y-1">
-              <p>I'm Nobody! Who are you?</p>
-              <p>Are you – Nobody – Too?</p>
-              <p>Then there's a pair of us!</p>
-              <p>Don't tell! they'd advertise – you know!</p>
-              <div class="h-3"></div>
-              <p>How dreary – to be – Somebody!</p>
-              <p>How public – like a Frog –</p>
-              <p>To tell one's name – the livelong June –</p>
-              <p>To an admiring Bog!</p>
-            </div>
-          </div>
+
         </div>
       </article>
     </div>
@@ -185,25 +159,20 @@
           <h3 class="font-serif text-xl font-bold text-paper-50 tracking-wide">יעקב לח</h3>
           <span class="text-xs text-paper-400 font-sans block mt-0.5">מתרגם</span>
         </div>
+        <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <a
+            href="mailto:lakhy011@gmail.com"
+            class="text-xs sm:text-sm text-paper-300 hover:text-gold-400 transition font-mono flex items-center gap-2"
+            dir="ltr"
+          >
+            <svg class="w-4 h-4 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            <span>lakhy011@gmail.com</span>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
-
-  <script>
-    const mobileBtn = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIconOpen = document.getElementById('menu-icon-open');
-    const menuIconClose = document.getElementById('menu-icon-close');
-
-    if (mobileBtn) {
-      mobileBtn.addEventListener('click', () => {
-        const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
-        mobileBtn.setAttribute('aria-expanded', (!isExpanded).toString());
-        mobileMenu.classList.toggle('hidden');
-        menuIconOpen.classList.toggle('hidden');
-        menuIconClose.classList.toggle('hidden');
-      });
-    }
-  </script>
 </body>
 </html>
